@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Janet Niniola - Portfolio</title>
+    <link rel = "stylesheet" href ="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="images/mypicture.jpeg" alt="Profile image" class="profile-image">
+            <div class="header-text">
+                <h1>Janet Niniola</h1>
+                <p>Aspiring Developer | Cybersecurity Enthusiast</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href ="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id = "about">
+        <div class="about-box"> 
+        <h2>About Me</h2>
+        <p>
+            Hi, I’m Janet Niniola, a Computer Science graduate passionate about software development, web technologies, and cybersecurity. I’m currently learning HTML, CSS, and JavaScript, with a growing interest in building user-friendly, secure, and scalable applications.
+
+My technical skills include C, C++, C#, Java, Python, and SQL, which I use to solve problems and create efficient solutions. Beyond programming, I have hands-on experience in network security, IT support, and vulnerability assessments, which help me approach development with a security-first mindset.
+
+I’m eager to gain real-world experience in mobile and web development while applying my problem-solving skills to create impactful solutions. Let’s connect and build something great together!
+        </p>
+    </div>
+    </section>
+    <section id="skills">
+        <h2>My Skills</h2>
+    
+        <div class="skills-category">
+            <h3>Technical Skills</h3>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <i class="fas fa-code"></i>
+                    <p>Programming: C, C++, C#, Java, Python, SQL</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-tools"></i>
+                    <p>Software & Tools: Microsoft Office Suite</p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="skills-category">
+            <h3>Soft & Hard Skills</h3>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <i class="fas fa-comments"></i>
+                    <p>Excellent Communication & Interpersonal Skills</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-users"></i>
+                    <p>Team Collaboration</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-brain"></i>
+                    <p>Strong Analytical & Problem-Solving Abilities</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-clock"></i>
+                    <p>Effective Time Management</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="portfolio">
+        <h2>My Projects</h2>
+    
+        <!-- Digital Calculator Project -->
+        <div class="project">
+            <h3>Digital Calculator</h3>
+            <div class="project-gallery">
+            <img src = "images/digitalcalculator.png" alt="Digital Calculator Screenshot 1" onclick="openLightbox('images/digitalcalculator.png')">
+            <img src="images/Screenshot (51).png" alt="Digital Calculator Screenshot 2" onclick="openLightbox('images/Screenshot (51).png')">
+            <img src="images/Screenshot (52).png" alt="Digital Calculator Screenshot 3" onclick="openLightbox('images/Screenshot (52).png')">
+        </div>
+    </div>
+    <!-- Shipping Company Website Project -->
+    <div class="project">
+        <h3>Shipping Company Website</h3>
+        <div class="project-gallery">
+            <img src="images/Screenshot (19).png" alt="Shipping Website Screenshot 1" onclick="openLightbox('images/Screenshot (19).png')">
+            <img src="images/Screenshot (73).png" alt="Shipping Website Screenshot 2" onclick="openLightbox('images/Screenshot (73).png')">
+            <img src="images/Screenshot (75).png" alt="Shipping Website Screenshot 3" onclick="openLightbox('images/Screenshot (75).png')">
+        </div>
+    </div>
+
+    <!-- Lightbox (For Enlarged Image View) -->
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img">
+    </div>
+</section>
+</section>
+<section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <img src="images/siwes.jpg" alt="Project 1">
+        </div>
+        <div class="gallery-item">
+            <img src="images/WhatsApp Image 2023-05-10 at 14.10.59_e8461c28.jpg" alt="Project 2">
+        </div>
+        <div class="gallery-item">
+            <img src="images/WhatsApp Image 2023-05-08 at 13.05.13_884d5f51.jpg" alt="Project 3">
+        </div>
+        <div class="gallery-item">
+            <img src="images/Screenshot (73).png" alt="Project 4">
+        </div>
+    </div>
+    
+    </div>
+</section>
+<section id="contact">
+    <h2>Contact Me</h2>
+    <p>If you'd like to collaborate or have any inquiries, feel free to reach out!</p>
+    
+    <!-- Contact Details -->
+    <div class="contact-info">
+        <p><i class="fas fa-envelope"></i>  <a href="mailto:your.email@example.com">niniolajanet438@gmail.com</a></p>
+        <p><i class="fab fa-linkedin"></i>  <a href="https://www.linkedin.com/in/yourlinkedin" target="_blank">https://www.linkedin.com/in/janet-niniola-931194218/</a></p>
+        <p><i class="fab fa-github"></i>  <a href="https://github.com/yourgithub" target="_blank">http://github.com/niniolajanet</a></p>
+        <p><i class="fab fa-x-twitter"></i> <a href="https://twitter.com/yourtwitterhandle" target="_blank">https://x.com/omo_sir_tee</a></p>
+        <p><i class="fas fa-phone"></i> <a href="tel:+234XXXXXXXXXX">+2349042725540</a></p>
+
+    </div>
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
