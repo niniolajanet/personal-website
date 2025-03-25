@@ -2,15 +2,17 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     text-align:center;
     background-color: #f4f4f4;
-    color: #333;
+    color: #5c5353;
 }
 header {
     background-color: #333;
     color: white;
     padding: 20px;
 }
-h1, h2 {
-    color : #8a8282;
+h1 {
+color: #f0efef;
+} h2 {
+    color : #0f0e0e;
 
 }
 img {
@@ -22,14 +24,11 @@ img {
     height: 180px;
     object-fit: cover;
     border-radius: 50%;  /* Makes it circular */
-    border: 4px solid #333; /* Adds a border */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow */
+    border: 4px solid #b4a9a9; /* Adds a border */
+    box-shadow: 0px 4px 8px rgba(21, 146, 28, 0.2); /* Adds a shadow */
 }
 
-a {
-    color: blue;
-    text-decoration: none;
-}
+
 /* Navigation Bar */
 nav ul {
     list-style: none;
@@ -38,6 +37,17 @@ nav ul {
     display: flex;
     justify-content: center;
     background-color: #333;
+}
+/* Navigation Bar - Adjust for Smaller Screens */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
 }
 
 nav ul li {
@@ -65,9 +75,7 @@ html {
     padding: 10px;
     top: 10px;
     left: 10px;
-    
-    ;
-    
+      
    
 }
 
@@ -115,10 +123,10 @@ h3 {
 }
 
 .skill-card {
-    background: white;
+    background: rgb(156, 153, 194);
     border-radius: 10px;
     padding: 15px 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(156, 120, 120, 0.1);
     transition: transform 0.3s ease-in-out;
     max-width: 250px;
     text-align: center;
@@ -139,35 +147,64 @@ h3 {
     color: #555;
     font-weight: bold;
 }
-/* About Me Section */
-#about {
+/* About Me & Gallery Side by Side */
+#about-gallery {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
     padding: 50px 20px;
-    background-color: #f8f9fa;
+    max-width: 1000px;
+    margin: auto;
 }
 
+/* About Me Box */
 .about-box {
-    background: white;
-    max-width: 800px;
-    padding: 30px;
+    flex: 1; /* Takes up half the space */
+    background: rgb(190, 181, 181);
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Gallery Box */
+.gallery-box {
+    flex: 1; /* Takes up half the space */
     text-align: center;
+    border: 1px solid #f1eeee;
 }
 
-.about-box h2 {
-    font-size: 1.8em;
-    color: #2c3e50;
-    margin-bottom: 15px;
+/* Gallery Styling */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
 }
 
-.about-box p {
-    font-size: 1.1em;
-    color: #555;
-    line-height: 1.6;
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
 }
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Design (Stack on Smaller Screens) */
+@media (max-width: 768px) {
+    #about-gallery {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .gallery-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
 /* Portfolio Section Styling */
 #portfolio {
     text-align: center;
@@ -204,18 +241,38 @@ h3 {
 .project-gallery img:hover {
     transform: scale(1.1);
 }
+/* Responsive Project Gallery */
+@media (max-width: 768px) {
+    .project-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+    }
+
+    .project-gallery img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Responsive General Images */
+img {
+    max-width: 100%; /* Ensures images never overflow */
+    height: auto;
+}
+
 
 /* Lightbox Effect */
 .lightbox {
-    display: flex; /* Use flexbox to center the image */
-    align-items: center;
-    justify-content: center;
+    display: none; /* Ensures the lightbox is hidden initially */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
     z-index: 9999;
 }
 
@@ -237,7 +294,7 @@ h3 {
     top: 20px;
     right: 30px;
     font-size: 40px;
-    color: white;
+    color: rgb(214, 207, 207);
     cursor: pointer;
 }
 /* Contact Section with Background Image */
@@ -245,26 +302,13 @@ h3 {
     text-align: center;
     padding: 60px 20px;
     background: url("images/contact.jpg") no-repeat center center/cover; /* Add your image */
-    color: white;
+    color: rgb(32, 30, 30);
     border-radius: 10px;
     margin: 40px auto;
     position: relative;
 }
 
-/* Overlay to Make Text More Readable */
-#contact::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
-    border-radius: 10px;
-    z-index: 1;
-}
 
-#contact h2,
 .contact-info {
     position: relative;
     z-index: 2; /* Ensures text is above the overlay */
@@ -283,7 +327,7 @@ h3 {
     display: flex;
     align-items: center;
     gap: 10px;
-    background: rgba(255, 255, 255, 0.2); /* Light transparent background */
+    background: rgba(31, 30, 13, 0.836); /* Light transparent background */
     padding: 10px 15px;
     border-radius: 8px;
     transition: transform 0.3s ease;
@@ -296,17 +340,17 @@ h3 {
 
 .contact-info i {
     font-size: 24px;
-    color: #ffdd57; /* Yellow color for icons */
+    color: #9c7747; /* Yellow color for icons */
 }
 
 .contact-info a {
-    color: white;
+    color: rgb(236, 211, 68);
     text-decoration: none;
     font-weight: bold;
 }
 
 .contact-info a:hover {
-    color: #ffdd57;
+    color: #ffe0579d;
 }
 @media (max-width: 768px) {
     nav ul {
@@ -318,33 +362,114 @@ h3 {
         margin: 10px 0;
     }
 }
-#gallery {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #f9f9f9;
+/* Make Contact Section Responsive */
+@media (max-width: 768px) {
+    #contact {
+        padding: 40px 10px;
+    }
+
+    .contact-info {
+        gap: 10px;
+    }
+
+    .contact-info p {
+        font-size: 1rem;
+    }
 }
 
 .gallery-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-    max-width: 900px;
+    gap: 20px;
+    max-width: 1000px;
     margin: auto;
-}
-
-.gallery-item {
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px;
 }
 
 .gallery-item img {
     width: 100%;
-    height: auto;
-    transition: transform 0.3s ease-in-out;
+    height: 250px; /* Fixed height for uniformity */
+    object-fit: cover; /* Ensures image fills the box */
     border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
 }
 
 .gallery-item img:hover {
     transform: scale(1.05);
+    filter: brightness(90%);
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gallery-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust grid for smaller screens */
+    }
+
+    .gallery-item img {
+        height: 180px; /* Reduce image size for mobile */
+    }
+}
+/* Hide menu toggle on desktop */
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    margin-left: 20px;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+/* Responsive About & Gallery Section */
+@media (max-width: 768px) {
+    #about-gallery {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-box, .gallery-box {
+        width: 100%;
+    }
+
+    .gallery-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+/* Responsive Portfolio */
+@media (max-width: 768px) {
+    .project-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 10px;
+    }
+
+    .project-gallery img {
+        width: 100%;
+        height: auto;
+    }
+}
+.gallery-item img {
+    width: 100%;
+    height: 200px; /* Adjust based on your design */
+    object-fit: cover; /* Prevents stretching */
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+@media (max-width: 768px) {
+    .lightbox img {
+        max-width: 95%;
+        max-height: 70vh;
+    }
 }

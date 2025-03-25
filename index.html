@@ -6,6 +6,7 @@
     <title>Janet Niniola - Portfolio</title>
     <link rel = "stylesheet" href ="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
 
 
 </head>
@@ -19,27 +20,68 @@
             </div>
         </div>
         <nav>
-            <ul>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul id="nav-links">
                 <li><a href ="#about">About Me</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+        
     </header>
 
-    <section id = "about">
-        <div class="about-box"> 
-        <h2>About Me</h2>
-        <p>
-            Hi, I’m Janet Niniola, a Computer Science graduate passionate about software development, web technologies, and cybersecurity. I’m currently learning HTML, CSS, and JavaScript, with a growing interest in building user-friendly, secure, and scalable applications.
+    <section id="about-gallery">
+        <div class="about-box">
+            <h2>About Me</h2>
+            <p>
+                Hi, I’m Janet Niniola!
+ a Computer Science graduate passionate about software development, web technologies, and cybersecurity.Currently learning HTML, CSS, and JavaScript, with a growing interest in building user-friendly, secure, and scalable applications.
 
-My technical skills include C, C++, C#, Java, Python, and SQL, which I use to solve problems and create efficient solutions. Beyond programming, I have hands-on experience in network security, IT support, and vulnerability assessments, which help me approach development with a security-first mindset.
-
-I’m eager to gain real-world experience in mobile and web development while applying my problem-solving skills to create impactful solutions. Let’s connect and build something great together!
-        </p>
-    </div>
+Beyond tech, I love listening to music—it’s my favorite way to relax and stay inspired. I can be a bit quiet when I first meet people because I like to take in my environment, but once I get comfortable, I can be quite chatty!
+            </p>
+        </div>
+    
+        <div class="gallery-box">
+            <h2>Gallery</h2>
+            <div class="gallery-container">
+               
+                <div class="gallery-item">
+                    <img src="images/siwes.jpg" alt="Gallery Image 2" onclick="openLightbox(this.src)">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/personal picture4.jpg" alt="Gallery Image 3" onclick="openLightbox(this.src)">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/personal picture1.jpg" alt="Gallery Image 3" onclick="openLightbox(this.src)">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/personal picture2.jpg" alt="Gallery Image 3" onclick="openLightbox(this.src)">
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="images/WhatsApp Image 2023-05-10 at 14.11.06_9b645e64.jpg" alt="Gallery Image 3" onclick="openLightbox(this.src)">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/WhatsApp Image 2023-05-08 at 13.05.13_884d5f51.jpg" alt="Gallery Image 3" onclick="openLightbox(this.src)">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/football match.jpg" alt="Gallery Image 3" onclick="openLightbox(this.src)">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/666CC962-A944-44AF-BCDE-407CE386D4B0_1_105_c.jpeg" alt="Gallery Image 3" onclick="openLightbox(this.src)">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/group picture.jpg" alt="Gallery Image 3" onclick="openLightbox(this.src)">
+                </div>
+                
+            
+            </div>
+        </div>
     </section>
+    
     <section id="skills">
         <h2>My Skills</h2>
     
@@ -95,7 +137,7 @@ I’m eager to gain real-world experience in mobile and web development while ap
     <div class="project">
         <h3>Shipping Company Website</h3>
         <div class="project-gallery">
-            <img src="images/Screenshot (19).png" alt="Shipping Website Screenshot 1" onclick="openLightbox('images/Screenshot (19).png')">
+            <img src ="images/Screenshot (19).png" alt="Shipping Website Screenshot 1" onclick="openLightbox('images/Screenshot (19).png')">
             <img src="images/Screenshot (73).png" alt="Shipping Website Screenshot 2" onclick="openLightbox('images/Screenshot (73).png')">
             <img src="images/Screenshot (75).png" alt="Shipping Website Screenshot 3" onclick="openLightbox('images/Screenshot (75).png')">
         </div>
@@ -104,29 +146,11 @@ I’m eager to gain real-world experience in mobile and web development while ap
     <!-- Lightbox (For Enlarged Image View) -->
     <div id="lightbox" class="lightbox">
         <span class="close" onclick="closeLightbox()">&times;</span>
-        <img id="lightbox-img">
+        <img id="lightbox-img" src="" alt="Lightbox Image">
     </div>
 </section>
 </section>
-<section id="gallery">
-    <h2>Gallery</h2>
-    <div class="gallery-container">
-        <div class="gallery-item">
-            <img src="images/siwes.jpg" alt="Project 1">
-        </div>
-        <div class="gallery-item">
-            <img src="images/WhatsApp Image 2023-05-10 at 14.10.59_e8461c28.jpg" alt="Project 2">
-        </div>
-        <div class="gallery-item">
-            <img src="images/WhatsApp Image 2023-05-08 at 13.05.13_884d5f51.jpg" alt="Project 3">
-        </div>
-        <div class="gallery-item">
-            <img src="images/Screenshot (73).png" alt="Project 4">
-        </div>
-    </div>
-    
-    </div>
-</section>
+
 <section id="contact">
     <h2>Contact Me</h2>
     <p>If you'd like to collaborate or have any inquiries, feel free to reach out!</p>
